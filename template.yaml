@@ -4,11 +4,10 @@ Resources:
   ContactFormFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Properties:
-  PackageType: Zip
-  Handler: src/app.handler
-  Runtime: nodejs16.x
-  CodeUri: .
+      PackageType: Zip
+      Handler: src/app.handler
+      Runtime: nodejs16.x
+      CodeUri: .
       Environment:
         Variables:
           TABLE_NAME: ContactSubmissions
