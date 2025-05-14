@@ -4,19 +4,20 @@ Resources:
   ContactFormFunction:
     Type: AWS::Serverless::Function
     Properties:
-  PackageType: Zip
-  Handler: src/app.handler
-  Runtime: nodejs16.x
-  CodeUri: .
-  Environment:
-    Variables:
-      TABLE_NAME: ContactSubmissions
+      PackageType: Zip
+      Handler: src/app.handler
+      Runtime: nodejs16.x
+      CodeUri: .
+      Environment:
+        Variables:
+          TABLE_NAME: ContactSubmissions
       Events:
         ContactApi:
           Type: Api
           Properties:
             Path: /contact
             Method: post
+
   ContactTable:
     Type: AWS::DynamoDB::Table
     Properties:
